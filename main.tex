@@ -180,6 +180,55 @@ dy&=f(x)d(g(x))+g(x)d(f(x))+d(g(x))d(f(x))\\
 
 \noindent Thus, the product rule is true.
 
+\section{Chain rule}
+
+The chain rule states that
+
+$$\frac{d}{dx}(f(g(x)))=\frac{df(g(x))}{dg(x)}\frac{dg(x)}{dx}$$
+
+\noindent There is no clear geometric proof for this, so I will write one. Define $u$ and $v$ as such
+
+$$u(h)=\left\{ {\begin{array}{*{20}{l}}{\displaystyle \frac{{f( {x + h}) - f( x)}}{h} - \frac{df(x)}{dx}}&{{\mbox{  if }}h \ne 0}\\0&{{\mbox{  if }}h = 0}\end{array}} \right.$$
+
+$$v(h)=\left\{ {\begin{array}{*{20}{l}}{\displaystyle \frac{{g( {x + h}) - g( x)}}{h} - \frac{dg(x)}{dx}}&{{\mbox{  if }}h \ne 0}\\0&{{\mbox{  if }}h = 0}\end{array}} \right.$$
+
+\noindent We see that
+
+$$f(x+h)=f(x)+h\left(u(h)+\frac{df(x)}{dx}\right)$$
+$$g(x+h)=g(x)+h\left(v(h)+\frac{dg(x)}{dx}\right)$$
+
+\noindent From this we can extrapolate the rule.
+
+$$\begin{aligned}
+\frac{d}{dx}(f(g(x)))&=\lim_{h\to 0}\frac{f(g(x+h))-f(g(x))}{h}\\
+&=\lim_{h\to 0}\frac{f(g(x)+h\left(v(h)+\frac{dg(x)}{dx}\right))-f(g(x))}{h}\\
+&=\lim_{h\to 0}\frac{f(g(x))+h\left(v(h)+\frac{dg(x)}{dx}\right)\left(u(h\left(v(h)+\frac{dg(x)}{dx}\right))+\frac{df(g(x))}{dg(x)}\right)-f(g(x))}{h}\\
+&=\lim_{h\to 0}\frac{h\left(v(h)+\frac{dg(x)}{dx}\right)\left(u(h\left(v(h)+\frac{dg(x)}{dx}\right))+\frac{df(g(x))}{dg(x)}\right)}{h}\\
+&=\lim_{h\to 0}\left(v(h)+\frac{dg(x)}{dx}\right)\left(u(h\left(v(h)+\frac{dg(x)}{dx}\right))+\frac{df(g(x))}{dg(x)}\right)\\
+&=\frac{df(g(x))}{dg(x)}\frac{dg(x)}{dx}
+\end{aligned}$$
+
+\noindent If you don't want to read this a more simpler way to think of it is like this, if a car is moving twice as fast as a bike and a bike is moving 4 times as fast as a person. Then a car is moving 8 times faster than a person. In math form:
+
+$$\frac{dc}{dp}=\frac{dc}{db}\frac{db}{dp}=(2)(4)=8$$
+
+\noindent From the chain rule and product rule, we can basically calculate most derivatives since most functions are products and composites of functions with known derivatives. Hence, by recursively applying these rules, one can solve any problem.
+
+\section{Quotient rule (Optional reading)}
+
+The quotient rule states that
+
+$$\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)\frac{d}{dx}(f(x))-f(x)\frac{d}{dx}(g(x))}{g^2(x)}$$
+
+\noindent We can prove this by using all the rules we have learnt so far
+
+$$\begin{aligned}
+\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)&=\frac{d}{dx}\left(f(x)\frac{1}{g(x)}\right)\\
+&=f(x)\frac{d}{dx}\left(\frac{1}{g(x)}\right)+\frac{\frac{d}{dx}(f(x))}{g(x)}\\
+&=-\frac{f(x)}{g^2(x)}\frac{d}{dx}(g(x))+\frac{\frac{d}{dx}(f(x))}{g(x)}\\
+&=\frac{g(x)\frac{d}{dx}(f(x))-f(x)\frac{d}{dx}(g(x))}{g^2(x)}
+\end{aligned}$$
+
 \part{Physical Applications}
 
 \newpage
