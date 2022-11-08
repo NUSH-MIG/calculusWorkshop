@@ -134,11 +134,51 @@ $$df = 3x^2dx+3x{dx}^2+{dx}^3$$
 
 $$\frac{df}{dx}=3x^2$$
 
-Overall, we see that for any $x^n$, nudging $x$ by $dx$ causes there to be $n$ sections with the value $x^{n-1}dx$ and a varying amount of other sections with areas proportional to $dx^2$ which can be ignored. Hence, we can see easily now why
+\noindent Overall, we see that for any $x^n$, nudging $x$ by $dx$ causes there to be $n$ sections with the value $x^{n-1}dx$ and a varying amount of other sections with areas proportional to $dx^2$ which can be ignored. Hence, we can see easily now why
 
 $$\frac{d}{dx}(x^n)=nx^{n-1}$$
 
-The power rule defined as such applies for not just integers but also all real numbers. However, the exact proof is beyond the scope of this lesson.
+\noindent The power rule defined as such applies for not just integers but also all real numbers. However, the exact proof is beyond the scope of this lesson.
+
+\section{Product rule}
+
+The product rule states that
+$$\frac{d}{dx}(f(x)g(x))=f(x)\frac{d}{dx}(g(x))+g(x)\frac{d}{dx}(f(x))$$
+
+\noindent The symbolic proof is as follows
+
+$$
+\begin{aligned}
+\frac{d}{dx}(f(x)g(x))&=\lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}\\
+&=\lim_{h\to 0}\frac{{f({x+h})g({x+h})-f({x+h})g(x)+f({x+h})g(x)-f(x)g(x)}}{h}\\
+&=\lim_{h\to 0}f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to 0}g(x)\frac{f(x+h)-f(x)}{h}\\
+&=f(x)\frac{d}{dx}(g(x))+g(x)\frac{d}{dx}(f(x))
+\end{aligned}
+$$
+
+\noindent To grasp an intuitive sense of this however, we can look at a geometric diagram for the equation $y=f(x)g(x)$ similar to that of $x^2$,
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.35]{img/zayan/prodrule.png}
+        \caption{$y=f(x)g(x)$}
+        \label{fig:prodrule}
+    \end{center}
+\end{figure}
+
+\noindent We set the side lengths to be the functions, hence nudging $x$ by $dx$, the changes in the side lengths will be $d(f(x))$ and $d(g(x))$. We can obtain an expression for $dy$ by summing up all the tiny rectangles
+
+$$dy=f(x)d(g(x))+g(x)d(f(x))+d(g(x))d(f(x))$$
+
+\noindent we now solve for $dy$,
+
+$$\begin{aligned}
+dy&=f(x)d(g(x))+g(x)d(f(x))+d(g(x))d(f(x))\\
+\frac{dy}{dx}&=f(x)\frac{d}{dx}(g(x))+g(x)\frac{d}{dx}(f(x))+\frac{d}{dx}(f(x))\frac{d}{dx}(g(x))dx\\
+\frac{dy}{dx}&=f(x)\frac{d}{dx}(g(x))+g(x)\frac{d}{dx}(f(x))
+\end{aligned}$$
+
+\noindent Thus, the product rule is true.
 
 \part{Physical Applications}
 
