@@ -76,6 +76,69 @@
 \vspace{-30pt}
 \large \textit{by Karimi Zayan}
 
+\section{Power rule}
+
+The power Rule states that
+
+$$\frac{d}{dx}(x^n)=nx^{n-1}$$
+
+ \noindent The symbolic proof is as follows
+$$
+\begin{aligned}
+\frac{d}{dx}(x^n)&=\lim_{h\to 0}\frac{(x+h)^n-x^n}{h}\\
+&=\lim_{h\to 0}\frac{x^n+\binom{n}{1}x^{n-1}h+\cdots +\binom{n}{n}h^n-x^n}{h}\\
+&=\lim_{h\to 0}\frac{\binom{n}{1}x^{n-1}h+\cdots +\binom{n}{n}h^n}{h}\\
+&=\lim_{h\to 0}\binom{n}{1}x^{n-1}+\cdots +\binom{n}{n}h^{n-1}\\
+&=nx^{n-1}
+\end{aligned}
+$$
+
+ \noindent To grasp an intuitive sense of this however, we can look at a geometric diagram for the equation $f(x)=x^2$.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.35]{img/zayan/pr1.png}
+        \caption{$f=x^2$}
+        \label{fig:pr1}
+    \end{center}
+\end{figure}
+
+ \noindent We look at $x^2$ and if we do a small nudge to $x$ by an infinitesimally small $dx$, we get the diagram as follows. We see that we can obtain an equation for $df$ by summing up the small rectangles that make up the expression.
+
+$$df=xdx+xdx+{dx}^2$$
+
+ \noindent Now, we solve for $\frac{df}{dx}$,
+ 
+$$
+\begin{aligned}
+df&=xdx+xdx+{dx}^2\\
+\frac{df}{dx}&=2x+dx\\
+\frac{df}{dx}&=2x
+\end{aligned}$$
+
+\noindent We can apply this same logic to a cube.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.75]{img/zayan/pr2.png}
+        \caption{$f=x^3$}
+        \label{fig:pr2}
+    \end{center}
+\end{figure}
+
+\noindent We obtain a new equation for $df$ as follows
+
+$$df = 3x^2dx+3x{dx}^2+{dx}^3$$
+
+\noindent We can easily see
+
+$$\frac{df}{dx}=3x^2$$
+
+Overall, we see that for any $x^n$, nudging $x$ by $dx$ causes there to be $n$ sections with the value $x^{n-1}dx$ and a varying amount of other sections with areas proportional to $dx^2$ which can be ignored. Hence, we can see easily now why
+
+$$\frac{d}{dx}(x^n)=nx^{n-1}$$
+
+The power rule defined as such applies for not just integers but also all real numbers. However, the exact proof is beyond the scope of this lesson.
 
 \part{Physical Applications}
 
